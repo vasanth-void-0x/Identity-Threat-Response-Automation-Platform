@@ -3,7 +3,11 @@
 </p>
 
 # 🛡️ Identity Threat Response Automation Platform
+## 🚀 Live Demo
 
+[Open ITRAP SOC Command Center](https://itrap-soc-center.streamlit.app/)
+
+> Demo Data mode is available publicly. Live Splunk integration is demonstrated through the local Windows lab because the Splunk Management API runs on localhost.
 ### A defensive SOC automation lab for identity threat detection, correlation, explainable risk scoring, MITRE ATT&CK mapping, and simulated incident response.
 
 [![Tests](https://github.com/vasanth-void-0x/Identity-Threat-Response-Automation-Platform/actions/workflows/tests.yml/badge.svg)](https://github.com/vasanth-void-0x/Identity-Threat-Response-Automation-Platform/actions)
