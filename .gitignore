@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Environment secrets - never commit
+.env
+
+# Database (created at runtime, never committed)
+database/*.db
+database/*.db-wal
+database/*.db-shm
+*.db
+
+# Logs
+logs/
+*.log
+
+# Generated reports
+reports_output/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/

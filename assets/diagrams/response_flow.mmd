@@ -1,0 +1,20 @@
+flowchart TD
+    A[Analyst triggers response action] --> B{Action in allowlist?}
+    B -- No --> Z[Blocked - logged as failed]
+    B -- Yes --> C{Severity meets minimum threshold?}
+    C -- No --> Z
+    C -- Yes --> D{Target is protected user/host/network?}
+    D -- Yes --> Z
+    D -- No --> E{simulation_mode = true?}
+    E -- Yes --> F[Simulated execution - no real change]
+    E -- No --> G{require_analyst_approval satisfied?}
+    G -- No --> Z
+    G -- Yes --> H[Real execution via automation module]
+    F --> I[ResponseAction saved to DB]
+    H --> I
+    Z --> I
+    I --> J[Audit log entry written]
+
+    style F fill:#fff8e1
+    style H fill:#fde2e2
+    style Z fill:#f5f5f5

@@ -1,0 +1,44 @@
+# configs/detection_rules.yaml
+# Detection rule enable/disable flags and thresholds. All values here can be
+# tuned without touching Python code.
+
+rules:
+  brute_force:
+    enabled: true
+    failure_threshold: 5
+    window_minutes: 5
+
+  successful_login_after_failures:
+    enabled: true
+    min_prior_failures: 3
+    window_minutes: 10
+
+  new_source_ip:
+    enabled: true
+
+  new_device:
+    enabled: true
+
+  impossible_travel:
+    enabled: true
+
+  privileged_logon:
+    enabled: true
+    correlation_window_minutes: 15
+
+  suspicious_powershell:
+    enabled: true
+
+  account_lockout:
+    enabled: true
+    correlation_window_minutes: 15
+
+  account_creation:
+    enabled: true
+    correlation_window_minutes: 30
+
+  group_membership_change:
+    enabled: true
+
+  suspicious_process:
+    enabled: true

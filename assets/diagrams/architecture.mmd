@@ -1,0 +1,17 @@
+graph TD
+    A[Windows Logs / Sysmon / Sample Logs] --> B[Parsers and Normalizer]
+    B --> C[Detection Engine]
+    C --> D[Correlation Engine]
+    D --> E[Risk Scoring]
+    E --> F[Threat Intelligence]
+    F --> G[MITRE ATT&CK Mapping]
+    G --> H[Incident Database - SQLite]
+    H --> I[AI Investigation Assistant]
+    I --> J[Response Automation - Simulation Mode]
+    H --> K[Streamlit Dashboard]
+    K --> L[PDF / HTML / CSV Reports]
+
+    style A fill:#e8f0fe
+    style H fill:#fdf2d0
+    style J fill:#fde2e2
+    style K fill:#e2f7e2

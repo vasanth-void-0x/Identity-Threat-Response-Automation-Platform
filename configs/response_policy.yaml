@@ -1,0 +1,37 @@
+# configs/response_policy.yaml
+# Automated response safety policy. SIMULATION MODE IS THE DEFAULT.
+# Real actions require simulation_mode: false AND require_analyst_approval
+# workflow AND the target must not be in a protected list below.
+
+simulation_mode: true
+require_analyst_approval: true
+
+allow_private_ip_blocking: false
+allow_localhost_blocking: false
+
+minimum_severity_threshold: "high"   # low | medium | high | critical
+
+protected_users:
+  - "administrator"
+  - "system"
+  - "svc_backup"
+  - "testadmin"
+
+protected_hosts:
+  - "SRV-DC-01"
+
+protected_networks:
+  - "10.0.0.0/8"
+  - "172.16.0.0/12"
+  - "192.168.0.0/16"
+  - "127.0.0.0/8"
+
+action_allowlist:
+  - "block_ip"
+  - "disable_account"
+  - "isolate_host"
+  - "kill_process"
+  - "create_ticket"
+  - "email_alert"
+  - "slack_alert"
+  - "flag_for_review"

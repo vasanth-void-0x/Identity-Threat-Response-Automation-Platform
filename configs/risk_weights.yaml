@@ -1,0 +1,26 @@
+# configs/risk_weights.yaml
+# Explainable risk-scoring weights. Edit these to tune severity outcomes
+# without touching detection_engine/risk_scoring.py.
+
+weights:
+  brute_force: 20
+  successful_login_after_failures: 25
+  new_source_ip: 15
+  new_device: 15
+  impossible_travel: 35
+  privileged_logon: 20
+  suspicious_powershell: 30
+  account_lockout: 15
+  account_creation: 15
+  account_creation_outside_hours: 20
+  group_membership_change: 20
+  group_membership_change_privileged: 35
+  suspicious_process: 25
+  known_malicious_ip: 30
+
+# Incident-level scoring is NOT a simple flat bonus - it's a dampened sum of
+# each distinct detection rule's highest contributing alert score within the
+# correlated cluster (see detection_engine/risk_scoring.score_incident).
+# This ensures a genuine multi-stage attack chain (brute force -> new host
+# login -> privileged logon -> suspicious PowerShell) scores CRITICAL rather
+# than being capped near its single worst alert.

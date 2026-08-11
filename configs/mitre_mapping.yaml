@@ -1,0 +1,18 @@
+# configs/mitre_mapping.yaml
+# Human-editable overview of which detection rule maps to which MITRE ATT&CK
+# technique(s). The authoritative technique metadata (descriptions,
+# investigation steps) lives in mitre/techniques.json - this file is a quick
+# reference for analysts and contributors.
+
+rule_to_technique:
+  brute_force: ["T1110"]
+  successful_login_after_failures: ["T1078", "T1110"]
+  new_source_ip: ["T1078"]
+  new_device: ["T1078"]
+  impossible_travel: ["T1078"]
+  privileged_logon: ["T1078", "T1548"]
+  suspicious_powershell: ["T1059.001"]
+  account_lockout: ["T1110"]
+  account_creation: ["T1136.001"]
+  group_membership_change: ["T1098", "T1069"]
+  suspicious_process: ["T1204", "T1059.001"]

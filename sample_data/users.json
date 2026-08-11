@@ -1,0 +1,87 @@
+[
+  {
+    "username": "alice",
+    "display_name": "Alice Fernandez",
+    "department": "Finance",
+    "is_privileged": false,
+    "known_ips": [
+      "192.0.2.10"
+    ],
+    "known_devices": [
+      "WKS-ALICE-01"
+    ],
+    "known_countries": [
+      "IN"
+    ],
+    "first_seen": "2026-04-21T09:00:00Z",
+    "last_seen": "2026-07-20T09:00:00Z"
+  },
+  {
+    "username": "bob",
+    "display_name": "Bob Krishnan",
+    "department": "Engineering",
+    "is_privileged": false,
+    "known_ips": [
+      "192.0.2.20"
+    ],
+    "known_devices": [
+      "WKS-BOB-01"
+    ],
+    "known_countries": [
+      "IN"
+    ],
+    "first_seen": "2026-04-21T09:00:00Z",
+    "last_seen": "2026-07-20T09:00:00Z"
+  },
+  {
+    "username": "charlie",
+    "display_name": "Charlie Rajan",
+    "department": "IT Operations",
+    "is_privileged": true,
+    "known_ips": [
+      "192.0.2.30"
+    ],
+    "known_devices": [
+      "WKS-CHARLIE-01"
+    ],
+    "known_countries": [
+      "IN"
+    ],
+    "first_seen": "2026-03-22T09:00:00Z",
+    "last_seen": "2026-07-20T09:00:00Z"
+  },
+  {
+    "username": "socanalyst",
+    "display_name": "SOC Analyst (Tier 1)",
+    "department": "Security",
+    "is_privileged": true,
+    "known_ips": [
+      "192.0.2.40"
+    ],
+    "known_devices": [
+      "WKS-SOC-01"
+    ],
+    "known_countries": [
+      "IN"
+    ],
+    "first_seen": "2026-01-01T09:00:00Z",
+    "last_seen": "2026-07-20T09:00:00Z"
+  },
+  {
+    "username": "testadmin",
+    "display_name": "Test Administrator",
+    "department": "IT Operations",
+    "is_privileged": true,
+    "known_ips": [
+      "192.0.2.50"
+    ],
+    "known_devices": [
+      "SRV-DC-01"
+    ],
+    "known_countries": [
+      "IN"
+    ],
+    "first_seen": "2025-09-23T09:00:00Z",
+    "last_seen": "2026-07-20T09:00:00Z"
+  }
+]

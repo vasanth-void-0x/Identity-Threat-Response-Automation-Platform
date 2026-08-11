@@ -1,0 +1,20 @@
+stateDiagram-v2
+    [*] --> new
+    new --> triaged: analyst reviews alert
+    triaged --> investigating: analyst opens investigation
+    investigating --> contained: response action executed
+    investigating --> false_positive: analyst marks false positive
+    contained --> resolved: root cause addressed
+    false_positive --> [*]
+    resolved --> [*]
+
+    note right of new
+        Incident created by correlation
+        engine from 1+ related alerts
+    end note
+
+    note right of investigating
+        AI summary generated,
+        investigation checklist followed,
+        analyst notes added
+    end note

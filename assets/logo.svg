@@ -1,0 +1,42 @@
+<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#0b3d91"/>
+    </linearGradient>
+    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60d394" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#60d394"/>
+      <stop offset="100%" stop-color="#60d394" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield -->
+  <path d="M120 14 L206 46 V112 C206 168 170 208 120 226 C70 208 34 168 34 112 V46 Z"
+        fill="url(#shieldGrad)" stroke="#0a1f44" stroke-width="3"/>
+  <path d="M120 14 L206 46 V112 C206 168 170 208 120 226 C70 208 34 168 34 112 V46 Z"
+        fill="none" stroke="#8ecdf7" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Circuit / network pattern inside shield -->
+  <g stroke="#cfe6ff" stroke-width="1.6" fill="none" opacity="0.55">
+    <circle cx="120" cy="70" r="4" fill="#cfe6ff"/>
+    <circle cx="80" cy="105" r="4" fill="#cfe6ff"/>
+    <circle cx="160" cy="105" r="4" fill="#cfe6ff"/>
+    <circle cx="95" cy="150" r="4" fill="#cfe6ff"/>
+    <circle cx="145" cy="150" r="4" fill="#cfe6ff"/>
+    <line x1="120" y1="70" x2="80" y2="105"/>
+    <line x1="120" y1="70" x2="160" y2="105"/>
+    <line x1="80" y1="105" x2="95" y2="150"/>
+    <line x1="160" y1="105" x2="145" y2="150"/>
+    <line x1="95" y1="150" x2="145" y2="150"/>
+    <line x1="80" y1="105" x2="160" y2="105"/>
+  </g>
+
+  <!-- Identity checkmark / lock core -->
+  <circle cx="120" cy="118" r="26" fill="#0a1f44" stroke="#60d394" stroke-width="2.5"/>
+  <path d="M108 118 L117 128 L134 108" fill="none" stroke="#60d394" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Pulse / detection sweep line -->
+  <rect x="50" y="184" width="140" height="3" fill="url(#pulseGrad)"/>
+</svg>

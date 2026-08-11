@@ -1,0 +1,29 @@
+[
+  {
+    "event_code": "4720",
+    "timestamp": "2026-07-19T02:15:00Z",
+    "user": "testadmin",
+    "target_user": "svc_temp01",
+    "hostname": "SRV-DC-01",
+    "source_ip": "192.0.2.50",
+    "status": "success"
+  },
+  {
+    "event_code": "4732",
+    "timestamp": "2026-07-20T17:25:00Z",
+    "user": "testadmin",
+    "target_user": "svc_temp01",
+    "hostname": "SRV-DC-01",
+    "source_ip": "192.0.2.50",
+    "group_name": "Administrators",
+    "status": "success"
+  },
+  {
+    "event_code": "4672",
+    "timestamp": "2026-07-20T17:28:20Z",
+    "user": "svc_temp01",
+    "source_ip": "198.51.100.99",
+    "hostname": "SRV-DC-01",
+    "status": "success"
+  }
+]

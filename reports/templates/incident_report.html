@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Incident Report - {{ incident.incident_id }}</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 40px; color: #e8e8ef; background:#09090d; }
+  h1 { color: #fff; border-bottom: 2px solid #6d28d9; padding-bottom: 8px; }
+  h2 { color: #c4b5fd; margin-top: 30px; }
+  .badge { display: inline-block; padding: 4px 12px; border-radius: 4px; color: white; font-weight: bold; }
+  .critical { background: #c0392b; }
+  .high { background: #e67e22; }
+  .medium { background: #f1c40f; color: #1a1a1a; }
+  .low { background: #27ae60; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  th, td { border: 1px solid #292932; padding: 8px 12px; text-align: left; }
+  th { background: #17171e; }
+  .footer { margin-top: 40px; font-size: 0.85em; color: #8d8d99; border-top: 1px solid #292932; padding-top: 10px; }
+  .ethics { background: #15121d; border-left: 4px solid #7c3aed; padding: 10px 15px; margin-top: 20px; }
+</style>
+</head>
+<body>
+  <h1>Identity Threat Response Automation Platform</h1>
+  <h2>Incident Report: {{ incident.incident_id }}</h2>
+
+  <p><strong>Title:</strong> {{ incident.title }}</p>
+  <p><strong>Severity:</strong> <span class="badge {{ incident.severity }}">{{ incident.severity|upper }}</span></p>
+  <p><strong>Risk Score:</strong> {{ incident.risk_score }}/100</p>
+  <p><strong>Status:</strong> {{ incident.status }}</p>
+  <p><strong>Affected User:</strong> {{ incident.user or 'N/A' }}</p>
+  <p><strong>Source IP(s):</strong> {{ incident.source_ips|join(', ') or 'N/A' }}</p>
+  <p><strong>Hosts:</strong> {{ incident.hosts|join(', ') or 'N/A' }}</p>
+  <p><strong>Created:</strong> {{ incident.created_at }}</p>
+  <p><strong>Last Updated:</strong> {{ incident.updated_at }}</p>
+
+  <h2>Executive Summary</h2>
+  <p>{{ ai_summary }}</p>
+
+  <h2>MITRE ATT&amp;CK Techniques</h2>
+  <table>
+    <tr><th>ID</th><th>Name</th><th>Tactic</th></tr>
+    {% for t in mitre_details %}
+    <tr><td>{{ t.id }}</td><td>{{ t.name }}</td><td>{{ t.tactic }}</td></tr>
+    {% endfor %}
+  </table>
+
+  <h2>Detection Timeline</h2>
+  <table>
+    <tr><th>Timestamp</th><th>Event</th><th>Source</th></tr>
+    {% for entry in incident.timeline %}
+    <tr><td>{{ entry.timestamp }}</td><td>{{ entry.description }}</td><td>{{ entry.source }}</td></tr>
+    {% endfor %}
+  </table>
+
+  <h2>Response Actions Taken</h2>
+  <table>
+    <tr><th>Action</th><th>Target</th><th>Mode</th><th>Status</th><th>Result</th></tr>
+    {% for action in response_actions %}
+    <tr>
+      <td>{{ action.action_type }}</td><td>{{ action.target }}</td>
+      <td>{{ action.mode }}</td><td>{{ action.status }}</td><td>{{ action.result }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h2>Analyst Notes</h2>
+  <ul>
+    {% for note in incident.investigation_notes %}
+    <li>{{ note }}</li>
+    {% endfor %}
+  </ul>
+
+  <div class="ethics">
+    <strong>Evidence Disclosure:</strong> {{ data_source }}. Response actions remain analyst-controlled
+    and simulated unless the separately configured approval policy explicitly permits real actions.
+  </div>
+
+  <div class="footer">
+    Report generated: {{ generated_at }} | Identity Threat Response Automation Platform
+  </div>
+</body>
+</html>

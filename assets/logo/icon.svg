@@ -1,0 +1,44 @@
+<svg width="512" height="512" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f5fd6"/>
+      <stop offset="100%" stop-color="#0b3d91"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5ee7ff"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield -->
+  <path d="M128 18
+           L214 50
+           V118
+           C214 176 178 214 128 240
+           C78 214 42 176 42 118
+           V50
+           Z"
+        fill="url(#shieldGrad)" stroke="#08265c" stroke-width="4"/>
+
+  <!-- Inner shield highlight -->
+  <path d="M128 34
+           L198 60
+           V118
+           C198 168 168 200 128 222
+           C88 200 58 168 58 118
+           V60
+           Z"
+        fill="none" stroke="#5ee7ff" stroke-width="2" opacity="0.35"/>
+
+  <!-- Identity graph: three connected nodes forming an abstract "person/ID" glyph -->
+  <line x1="128" y1="96"  x2="98"  y2="150" stroke="#eaf6ff" stroke-width="5" stroke-linecap="round"/>
+  <line x1="128" y1="96"  x2="158" y2="150" stroke="#eaf6ff" stroke-width="5" stroke-linecap="round"/>
+  <line x1="98"  y1="150" x2="158" y2="150" stroke="#eaf6ff" stroke-width="5" stroke-linecap="round"/>
+
+  <circle cx="128" cy="96"  r="16" fill="url(#nodeGrad)" stroke="#eaf6ff" stroke-width="3"/>
+  <circle cx="98"  cy="150" r="12" fill="url(#nodeGrad)" stroke="#eaf6ff" stroke-width="3"/>
+  <circle cx="158" cy="150" r="12" fill="url(#nodeGrad)" stroke="#eaf6ff" stroke-width="3"/>
+
+  <!-- Pulse ring on the primary (identity) node to suggest active monitoring -->
+  <circle cx="128" cy="96" r="24" fill="none" stroke="#5ee7ff" stroke-width="2" opacity="0.6"/>
+</svg>

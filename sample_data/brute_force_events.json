@@ -1,0 +1,83 @@
+[
+  {
+    "event_code": "4625",
+    "timestamp": "2026-07-20T11:46:40Z",
+    "user": "bob",
+    "source_ip": "198.51.100.66",
+    "hostname": "WKS-BOB-01",
+    "failure_reason": "%%2313",
+    "status": "failure"
+  },
+  {
+    "event_code": "4625",
+    "timestamp": "2026-07-20T11:47:10Z",
+    "user": "bob",
+    "source_ip": "198.51.100.66",
+    "hostname": "WKS-BOB-01",
+    "failure_reason": "%%2313",
+    "status": "failure"
+  },
+  {
+    "event_code": "4625",
+    "timestamp": "2026-07-20T11:47:40Z",
+    "user": "bob",
+    "source_ip": "198.51.100.66",
+    "hostname": "WKS-BOB-01",
+    "failure_reason": "%%2313",
+    "status": "failure"
+  },
+  {
+    "event_code": "4625",
+    "timestamp": "2026-07-20T11:48:10Z",
+    "user": "bob",
+    "source_ip": "198.51.100.66",
+    "hostname": "WKS-BOB-01",
+    "failure_reason": "%%2313",
+    "status": "failure"
+  },
+  {
+    "event_code": "4625",
+    "timestamp": "2026-07-20T11:48:40Z",
+    "user": "bob",
+    "source_ip": "198.51.100.66",
+    "hostname": "WKS-BOB-01",
+    "failure_reason": "%%2313",
+    "status": "failure"
+  },
+  {
+    "event_code": "4625",
+    "timestamp": "2026-07-20T11:49:10Z",
+    "user": "bob",
+    "source_ip": "198.51.100.66",
+    "hostname": "WKS-BOB-01",
+    "failure_reason": "%%2313",
+    "status": "failure"
+  },
+  {
+    "event_code": "4625",
+    "timestamp": "2026-07-20T11:49:40Z",
+    "user": "bob",
+    "source_ip": "198.51.100.66",
+    "hostname": "WKS-BOB-01",
+    "failure_reason": "%%2313",
+    "status": "failure"
+  },
+  {
+    "event_code": "4740",
+    "timestamp": "2026-07-20T11:50:20Z",
+    "user": "bob",
+    "source_ip": "198.51.100.66",
+    "hostname": "WKS-BOB-01",
+    "status": "success"
+  },
+  {
+    "event_code": "4624",
+    "timestamp": "2026-07-20T11:55:10Z",
+    "user": "bob",
+    "source_ip": "198.51.100.66",
+    "hostname": "SRV-JUMP-02",
+    "device": "SRV-JUMP-02",
+    "logon_type": "10",
+    "status": "success"
+  }
+]

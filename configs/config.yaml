@@ -1,0 +1,32 @@
+# configs/config.yaml
+# Main application configuration for the Identity Threat Response Automation Platform.
+# Secrets (API keys, webhook URLs) are NOT stored here - they come from .env / environment
+# variables. This file only holds non-secret operational settings.
+
+app_name: "Identity Threat Response Automation Platform"
+environment: "lab"
+
+database_path: "database/itrap.db"
+
+log_level: "INFO"
+log_dir: "logs"
+
+correlation_window_minutes: 30
+report_output_dir: "reports_output"
+
+# Notification channels - disabled by default. Enable explicitly and set
+# secrets via .env (EMAIL_SMTP_HOST, SLACK_WEBHOOK_URL, etc.)
+email_enabled: false
+slack_enabled: false
+email_smtp_port: 587
+
+threat_intelligence:
+  provider:  "virustotal"        # mock | virustotal | abuseipdb
+  geoip_provider: "live"    # mock | live
+  cache_ttl_seconds: 3600
+  request_timeout_seconds: 5
+  max_retries: 2
+
+ai:
+  provider: "groq"          # mock | groq
+  model: "llama-3.3-70b-versatile"

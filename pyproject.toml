@@ -1,0 +1,33 @@
+[project]
+name = "identity-threat-response-automation-platform"
+version = "1.5.0"
+description = "Defensive SOC automation platform for identity threat detection, correlation, risk scoring, and simulated response - built as a portfolio project for SOC Analyst / Security Analyst roles."
+requires-python = ">=3.11"
+authors = [
+    { name = "Vasanth Kumar" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+
+dependencies = [
+    "streamlit>=1.38.0",
+    "pandas>=2.2.0",
+    "plotly>=5.24.0",
+    "PyYAML>=6.0.2",
+    "python-dotenv>=1.0.1",
+    "requests>=2.32.0",
+    "pydantic>=2.9.0",
+    "reportlab>=4.2.0",
+    "Jinja2>=3.1.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"

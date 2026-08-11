@@ -1,0 +1,24 @@
+flowchart LR
+    subgraph Sources
+        A1[Windows Event XML]
+        A2[Sysmon JSON]
+        A3[PowerShell 4104 logs]
+        A4[CSV export - Splunk/Wazuh]
+        A5[Sample JSON scenarios]
+    end
+
+    A1 --> B[windows_event_parser]
+    A2 --> C[sysmon_parser]
+    A3 --> D[powershell_parser]
+    A4 --> E[csv_parser]
+    A5 --> F[json_parser]
+
+    B --> G[normalizer.normalize_raw_event]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+
+    G --> H[NormalizedEvent - Pydantic model]
+    H --> I[(events table - SQLite)]
+    H --> J[Detection Engine]

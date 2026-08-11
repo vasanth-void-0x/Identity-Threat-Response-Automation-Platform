@@ -1,0 +1,30 @@
+[
+  {
+    "event_code": "4624",
+    "timestamp": "2026-07-20T14:33:20Z",
+    "user": "alice",
+    "source_ip": "192.0.2.10",
+    "hostname": "WKS-ALICE-01",
+    "status": "success",
+    "location": {
+      "city": "Chennai",
+      "country": "IN",
+      "lat": 13.0827,
+      "lon": 80.2707
+    }
+  },
+  {
+    "event_code": "4624",
+    "timestamp": "2026-07-20T14:48:20Z",
+    "user": "alice",
+    "source_ip": "203.0.113.13",
+    "hostname": "UNKNOWN-HOST",
+    "status": "success",
+    "location": {
+      "city": "Lagos",
+      "country": "NG",
+      "lat": 6.5244,
+      "lon": 3.3792
+    }
+  }
+]

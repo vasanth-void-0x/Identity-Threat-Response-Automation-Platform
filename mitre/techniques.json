@@ -1,0 +1,117 @@
+{
+  "T1110": {
+    "name": "Brute Force",
+    "tactic": "Credential Access",
+    "description": "Adversaries may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained.",
+    "detection_source": "Windows Security Event ID 4625",
+    "investigation_steps": [
+      "Identify the source IP(s) generating failed login attempts",
+      "Check if the account eventually authenticated successfully",
+      "Review geolocation and ASN of the source IP",
+      "Check for the same pattern against other accounts (password spraying)",
+      "Consider blocking the source IP and forcing a password reset"
+    ]
+  },
+  "T1078": {
+    "name": "Valid Accounts",
+    "tactic": "Defense Evasion, Persistence, Privilege Escalation, Initial Access",
+    "description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining initial access, persistence, privilege escalation, or defense evasion.",
+    "detection_source": "Windows Security Event ID 4624, 4672",
+    "investigation_steps": [
+      "Verify the login originated from an expected location/device",
+      "Cross-reference with the user's normal working pattern",
+      "Check for concurrent sessions from different geographies",
+      "Review any privilege escalation immediately following the logon"
+    ]
+  },
+  "T1059.001": {
+    "name": "Command and Scripting Interpreter: PowerShell",
+    "tactic": "Execution",
+    "description": "Adversaries may abuse PowerShell commands and scripts for execution, often to download payloads, evade defenses, or perform discovery.",
+    "detection_source": "Windows Security Event ID 4104 (Script Block Logging)",
+    "investigation_steps": [
+      "Review the full script block content",
+      "Identify the parent process that spawned PowerShell",
+      "Check for encoded commands, download cradles, or execution policy bypass",
+      "Correlate with network connections initiated by the PowerShell process"
+    ]
+  },
+  "T1087": {
+    "name": "Account Discovery",
+    "tactic": "Discovery",
+    "description": "Adversaries may attempt to get a listing of accounts on a system or within an environment to inform follow-on behavior.",
+    "detection_source": "Windows Security Event ID 4661, 4798",
+    "investigation_steps": [
+      "Identify the process/account performing enumeration",
+      "Check for use of built-in tools (net user, Get-ADUser, dsquery)",
+      "Correlate with subsequent authentication attempts against discovered accounts"
+    ]
+  },
+  "T1136.001": {
+    "name": "Create Account: Local Account",
+    "tactic": "Persistence",
+    "description": "Adversaries may create a local account to maintain access to victim systems.",
+    "detection_source": "Windows Security Event ID 4720",
+    "investigation_steps": [
+      "Verify the account creation was authorized via change management",
+      "Check the creator's account and its normal privileges",
+      "Review immediate follow-on activity (group membership changes)",
+      "Check whether creation occurred outside business hours"
+    ]
+  },
+  "T1098": {
+    "name": "Account Manipulation",
+    "tactic": "Persistence, Privilege Escalation",
+    "description": "Adversaries may manipulate accounts to maintain access to victim systems, such as adding accounts to high-privilege groups.",
+    "detection_source": "Windows Security Event ID 4728, 4732, 4756",
+    "investigation_steps": [
+      "Identify who performed the group membership change and their authorization",
+      "Determine the sensitivity of the target group",
+      "Check for a corresponding recent account creation event",
+      "Review the target account's subsequent activity for privilege abuse"
+    ]
+  },
+  "T1069": {
+    "name": "Permission Groups Discovery",
+    "tactic": "Discovery",
+    "description": "Adversaries may attempt to discover group and permission settings to understand which accounts exist and their permission levels.",
+    "detection_source": "Windows Security Event ID 4799",
+    "investigation_steps": [
+      "Identify the process/account enumerating group membership",
+      "Check for correlation with subsequent privilege escalation attempts"
+    ]
+  },
+  "T1548": {
+    "name": "Abuse Elevation Control Mechanism",
+    "tactic": "Privilege Escalation, Defense Evasion",
+    "description": "Adversaries may circumvent mechanisms designed to control elevated privileges to gain higher-level permissions.",
+    "detection_source": "Windows Security Event ID 4672",
+    "investigation_steps": [
+      "Determine whether elevated privileges were expected for this account/context",
+      "Review the process that requested elevation",
+      "Correlate with any new IP/device risk factors"
+    ]
+  },
+  "T1204": {
+    "name": "User Execution",
+    "tactic": "Execution",
+    "description": "Adversaries may rely on a user taking an action, such as opening a malicious attachment leading to script execution, to gain execution.",
+    "detection_source": "Windows Security Event ID 4688, Sysmon Event ID 1",
+    "investigation_steps": [
+      "Review the parent-child process relationship",
+      "Identify the originating file or email if available",
+      "Check the command line arguments of the spawned process"
+    ]
+  },
+  "T1621": {
+    "name": "Multi-Factor Authentication Request Generation",
+    "tactic": "Credential Access",
+    "description": "Adversaries may repeatedly send MFA push notifications hoping the user accepts one out of fatigue (MFA push bombing).",
+    "detection_source": "Authentication provider MFA prompt logs",
+    "investigation_steps": [
+      "Count MFA prompts in a short window for the account",
+      "Check if any prompt was eventually approved",
+      "Verify with the user whether they initiated the requests"
+    ]
+  }
+}

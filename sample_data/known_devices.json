@@ -1,0 +1,17 @@
+{
+  "alice": [
+    "WKS-ALICE-01"
+  ],
+  "bob": [
+    "WKS-BOB-01"
+  ],
+  "charlie": [
+    "WKS-CHARLIE-01"
+  ],
+  "socanalyst": [
+    "WKS-SOC-01"
+  ],
+  "testadmin": [
+    "SRV-DC-01"
+  ]
+}
