@@ -372,25 +372,25 @@ false-positive case. Full table: `docs/demo_scenarios.md`.
 
 ## Screenshots
 
-| Overview (metrics, charts, attack map) | Alerts (filterable triage) |
+Fresh screenshots captured from the v1.5.0 interface at 1920×1080 after
+seeding the synthetic demo dataset.
+
+| Overview command centre | Alerts (filterable triage) |
 |---|---|
 | ![Overview](assets/screenshots/overview.png) | ![Alerts](assets/screenshots/alerts.png) |
 
-| Incident Investigation | MITRE ATT&CK Coverage Heatmap |
+| Incident queue | MITRE ATT&CK coverage heatmap |
 |---|---|
-| ![Incident Drilldown](assets/screenshots/incident_drilldown.png) | ![MITRE View](assets/screenshots/mitre_view.png) |
+| ![Incident Queue](assets/screenshots/incident_details.png) | ![MITRE View](assets/screenshots/mitre_view.png) |
 
-| Threat Intelligence Lookup | Response Center (simulation mode) |
+| Threat intelligence lookup | Response centre (simulation mode) |
 |---|---|
 | ![Threat Intelligence](assets/screenshots/threat_intelligence.png) | ![Response Center](assets/screenshots/response_center.png) |
 
-> ⚠️ These screenshots were captured against the pre-v1.4.0 layout (right-side
-> dock navigation, no Reports page, no HUD panels, no top KPI strip) and have
-> not been retaken yet - they no longer reflect the current Overview. Run the
-> app locally and capture fresh screenshots of the top-nav command centre,
-> the top KPI strip, the vertical Quick Actions panel, the Reports page, and
-> the HUD panels before publishing this build.
->
+| Reports workspace | Settings and integration status |
+|---|---|
+| ![Reports](assets/screenshots/reports.png) | ![Settings](assets/screenshots/settings.png) |
+
 > The Overview page's world map needs internet access to `cdn.plot.ly` for
 > base map boundary data (fetched client-side by Plotly.js) - it renders
 > fully on any normally-connected machine. Every other feature in ITRAP,
@@ -398,19 +398,17 @@ false-positive case. Full table: `docs/demo_scenarios.md`.
 
 ## Demo Video
 
-A quick animated preview of the main dashboard pages:
-
-![Demo Teaser](assets/screenshots/demo_teaser.gif)
-
 🎥 _For a full 2-3 minute narrated walkthrough (recommended for portfolio/interview
-sharing), record following `docs/demo_video_script.md` - it's a ready-to-follow
+sharing), follow `docs/demo_video_script.md` - it is a ready-to-record
 scene-by-scene script covering the full detection → correlation → investigation →
-response flow, then add the video link here._
+response flow._
 
 ## Live Demo
 
-🔗 _Add your Streamlit Community Cloud link here once deployed - see
-`docs/deployment.md` for exact deployment steps (free, no server needed)._
+🔗 [Open the ITRAP SOC Command Center](https://itrap-soc-center.streamlit.app/)
+
+The public deployment runs in Demo Data mode. Live Splunk connectivity is a
+local-lab feature because the Splunk Management API is bound to localhost.
 
 ## Splunk / Wazuh / Sysmon Integration
 
@@ -440,9 +438,6 @@ Wazuh alert mapping / API setup / Sysmon config guidance are documented in
 - Business-hours detection is a simple weekday/hour heuristic, not
   timezone-aware per user.
 - SQLite is appropriate for a lab/demo scale, not production log volumes.
-- **Screenshots are stale as of v1.5.0** (see Screenshots section above) -
-  retake them against the current top-nav Overview with the top KPI strip
-  and vertical Quick Actions panel before sharing this build.
 - The v1.5.0 Overview relayout (heading removed, KPI strip moved to top,
   Quick Actions moved into the left column, taller map, tightened spacing
   throughout) has been validated with `pytest`, `streamlit.testing.v1.AppTest`
@@ -523,9 +518,10 @@ formal detection-accuracy measurement. Full list: `docs/roadmap.md`.
 - Built an experimental Wazuh REST connector (JWT auth, pagination, timeouts, SSL
   verification, duplicate-ingestion prevention) feeding the same detection
   pipeline as the offline demo data, alongside a file-export adapter
-- Built a 7-page Streamlit SOC dashboard (alert triage, incident
-  investigation, threat intel lookup, MITRE coverage view, response center)
-  backed by a SQLite repository layer with 134 passing pytest tests
+- Built an 8-page Streamlit SOC dashboard (overview, alert triage, incident
+  investigation, threat intel lookup, MITRE coverage, response center,
+  reports, and settings)
+  backed by a SQLite repository layer with 159 passing pytest tests
 - Integrated optional threat intelligence and GeoIP (VirusTotal/AbuseIPDB/
   live GeoIP) and AI-assisted incident summarization (Groq) with
   deterministic offline fallbacks requiring zero API keys for full
