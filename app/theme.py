@@ -78,11 +78,6 @@ div[role="radiogroup"] label{transition:transform .2s ease,border-color .2s ease
 div[role="radiogroup"] label:has(input:checked){border-color:rgba(139,92,246,.72);background:rgba(18,14,27,.96);animation:activeGlow 2.8s ease-in-out infinite}
 div[role="radiogroup"] label>div:first-child{display:none}
 label[data-testid="stRadioOption"] div:not([data-testid]):not(:has([data-testid="stMarkdownContainer"])){display:none!important}
-/* Compact alien-tech module dock sits beside the map/content, never over it. */
-.st-key-primary_navigation{position:sticky;top:.8rem;z-index:30;background:linear-gradient(155deg,rgba(13,9,20,.94),rgba(4,4,7,.96));border:1px solid rgba(139,92,246,.36);border-radius:15px;padding:.32rem;backdrop-filter:blur(26px);box-shadow:inset 0 1px rgba(196,181,253,.09),0 0 28px rgba(76,29,149,.22),0 18px 42px rgba(0,0,0,.48)}
-.st-key-primary_navigation label{justify-content:flex-start!important;min-height:43px;margin:0!important;padding:.42rem .52rem!important;font-size:.66rem!important;line-height:1.1!important;white-space:normal!important}
-.st-key-primary_navigation label:has(input:checked){animation:navSignal 2.5s ease-in-out infinite;color:#fff;text-shadow:0 0 12px rgba(196,181,253,.65)}
-.st-key-primary_navigation label:hover{transform:translateX(-3px)!important}
 .st-key-header_mode [data-testid="stButtonGroup"]{padding:3px;border:1px solid rgba(139,92,246,.28);border-radius:11px;background:rgba(5,5,9,.78);box-shadow:inset 0 0 18px rgba(76,29,149,.09)}
 .st-key-header_mode button{min-height:34px!important;padding:.2rem .46rem!important;font-size:.62rem!important;border-radius:8px!important;white-space:nowrap!important}
 .st-key-header_mode button[aria-pressed="true"]{border-color:rgba(167,139,250,.75)!important;background:rgba(76,29,149,.38)!important;box-shadow:0 0 18px rgba(109,40,217,.34)!important;color:#fff!important}

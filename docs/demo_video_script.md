@@ -52,7 +52,7 @@ Show: Response Center → select incident → pick `block_ip` → execute →
 show the "[SIMULATION]" success message → scroll the action history table.
 
 **[2:15-2:30] Close**
-> "Full source, 134 passing tests, and setup docs are on GitHub - link
+> "Full source, 159 passing tests, and setup docs are on GitHub - link
 > below."
 
 Show: Settings page briefly (simulation mode confirmation), then cut.
